@@ -1,0 +1,8 @@
+{
+  "name": "hooks-todolist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:joshuaking06/hooks-todolist.git",
+  "author": "joshuaking06 <joshua.king0692@gmail.com>",
+  "license": "MIT"
+}
