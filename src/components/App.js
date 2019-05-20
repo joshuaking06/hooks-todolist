@@ -5,7 +5,6 @@ const App = (props) => {
 	const [ newTodo, setNewTodo ] = useState('')
 
 	const addTodo = (e) => {
-		console.log(todos, 'the todos')
 		const toAdd = {
 			task: newTodo,
 			finished: false
@@ -35,6 +34,21 @@ const App = (props) => {
 						<button className="button is-primary">Submit</button>
 					</div>
 				</form>
+
+				<div>
+					<ul>
+						{todos.map((todo) => (
+							<li key={todo.task}>
+								<button className="tiny button is-info" value={todo.task}>
+									Mark as done
+								</button>
+								<p>{todo.task}</p>
+								<strong>Finished:</strong>
+								{todo.finished + ''}
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
 		</div>
 	)
