@@ -14,6 +14,19 @@ const App = (props) => {
 		changeTodos([ ...todos, toAdd ])
 	}
 
+	const changeFinished = (e) => {
+		const newState = todos.map((todo) => {
+			if (todo.task === e.target.value) {
+				const bool = todo.finished
+				console.log('found the right one')
+				return { ...todo, finished: !bool }
+			}
+			return todo
+		})
+		console.log(newState)
+		changeTodos(newState)
+	}
+
 	return (
 		<div>
 			<h1>Hello World!</h1>
@@ -39,7 +52,11 @@ const App = (props) => {
 					<ul>
 						{todos.map((todo) => (
 							<li key={todo.task}>
-								<button className="tiny button is-info" value={todo.task}>
+								<button
+									className="tiny button is-info"
+									value={todo.task}
+									onClick={changeFinished}
+								>
 									Mark as done
 								</button>
 								<p>{todo.task}</p>
